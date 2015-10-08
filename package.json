@@ -1,0 +1,10 @@
+{
+  "name": "my-ghost-theme",
+  "version": "1.0.0",
+  "description": "My Scary Ghost theme",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "require-dir": "^0.3.0",
+    "ghost": "0.7.0"
+  }
+}
