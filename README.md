@@ -6,4 +6,5 @@ Each branch of this repository represents a part in the series:
 
 Blog post | Branch
 --------- | ------
-[Part 1](http://blog.switchbit.io/developing-a-ghost-theme-with-gulp) | `git checkout part1`
+[Part 1](https://github.com/switchbitio/ghost-theme-with-gulp/tree/part1) | `git checkout part1`
+[Part 2](https://github.com/switchbitio/ghost-theme-with-gulp/tree/part2) | `git checkout part2`
