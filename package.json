@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "description": "My Scary Ghost theme",
   "devDependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "require-dir": "^0.3.0",
-    "ghost": "0.7.0",
-    "run-sequence": "^1.1.0",
-    "gulp-replace": "^0.5.3",
-    "gulp-sym": "0.0.14",
-    "browser-sync": "^2.7.6"
+    "ghost": "0.7.5"
   }
 }
