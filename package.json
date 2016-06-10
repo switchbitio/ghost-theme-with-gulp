@@ -2,9 +2,14 @@
   "name": "my-ghost-theme",
   "version": "1.0.0",
   "description": "My Scary Ghost theme",
+  "repository": "switchbitio/ghost-theme-with-gulp",
+  "license" : "MIT",
+  "engines": {
+    "node": ">=4.4.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "require-dir": "^0.3.0",
-    "ghost": "0.7.5"
+    "ghost": "0.8.0"
   }
 }
