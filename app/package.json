@@ -1,0 +1,7 @@
+{
+  "name": "my-ghost-theme",
+  "version": "1.0.0",
+  "description": "My Scary Ghost theme",
+  "repository": "switchbitio/ghost-theme-with-gulp",
+  "license" : "MIT"
+}

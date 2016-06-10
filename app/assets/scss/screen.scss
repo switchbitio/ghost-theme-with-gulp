@@ -1,0 +1,10 @@
+// bower:scss
+@import "app/bower_components/normalize-scss/_normalize.scss";
+// endbower
+
+// layout based on https://smacss.com
+@import "base/colours.scss";
+
+@import "layout/header.scss";
+@import "layout/main.scss";
+@import "layout/footer.scss";

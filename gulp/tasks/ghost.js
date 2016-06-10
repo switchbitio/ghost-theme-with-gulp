@@ -6,6 +6,13 @@ var runSequence = require('run-sequence');
 var g;
 
 gulp.task('ghost:start', function (callback) {
+  runSequence(
+    [
+      'wiredep',
+      'wiredep:scss'
+    ],
+    'sass',
+    function () {
       g = ghost({
         config: path.join(__dirname, '../ghost-dev-config.js')
       });
@@ -17,4 +24,6 @@ gulp.task('ghost:start', function (callback) {
       });
 
       callback();
+    }
+  );
 });
