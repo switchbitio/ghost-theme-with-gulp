@@ -16,3 +16,6 @@ app/assets/fonts/Lora-*.woff
 
 # Docker
 docker/ghost/dist
+
+# Sourcemap
+*.map

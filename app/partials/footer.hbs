@@ -1,0 +1,12 @@
+<footer class="footer" role="contentinfo">
+  {{#is "index, tag, author"}}
+    {{pagination}}
+  {{else}}
+    <nav class="pagination" role="navigation">
+      <a href="{{@blog.url}}"><img src="/assets/images/ghost.png" alt="Ghost Theme"></a>
+    </nav>
+  {{/is}}
+  <section class="legal">
+    <aside>Ghost theme by <a href="http://blog.switchbit.io/developing-a-ghost-theme-with-gulp-part-4">Switchbit</a></aside>
+  </section>
+</footer>

@@ -1,5 +1,28 @@
 {{!< default}}
 
+<header>
+
+  {{#is "home"}}
+      <section {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}); background-size: cover{{else}}no-cover{{/if}}">
+    {{#if @blog.logo}}
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}"/>
+    {{else}}
+        <img src="/assets/images/ghost.png" alt="Brage Theme"/>
+    {{/if}}
+      <h1>{{@blog.title}}</h1>
+
+      <h2 class="page-description">{{@blog.description}}</h2>
+      </section>
+  {{/is}}
+
+</header>
+
 <main>
-  <h1>An awesome theme called {{@blog.title}}. coming soon!</h1>
+
+    <section>
+      {{#foreach posts}}
+        {{> "post"}}
+      {{/foreach}}
+    </section>
+
 </main>

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My Scary Ghost theme",
   "repository": "switchbitio/ghost-theme-with-gulp",
-  "license" : "MIT",
+  "license": "MIT",
   "engines": {
     "node": ">=4.4.0"
   },
@@ -12,12 +12,16 @@
     "gulp-replace": "~0.5.4",
     "gulp-sym": "~0.0.14",
     "require-dir": "^0.3.0",
-    "ghost": "0.8.0",
+    "ghost": "0.9.0",
     "browser-sync": "~2.12.10",
     "run-sequence": "~1.2.1",
     "bower": "~1.7.9",
     "wiredep": "~4.0.0",
     "gulp-sass": "~2.3.1",
     "gulp-sourcemaps": "~1.6.0"
+  },
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0"
   }
 }
