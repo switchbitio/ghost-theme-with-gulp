@@ -14,7 +14,7 @@ gulp.task('ghost:start', function (callback) {
     'sass',
     function () {
       g = ghost({
-        config: path.join(__dirname, '../ghost-dev-config.js')
+        config: path.join(__dirname, '../../ghost-dev-config.js')
       });
 
       g.then(function (ghostServer) {
