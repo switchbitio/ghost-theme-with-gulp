@@ -3,7 +3,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('dist', function (callback) {
   runSequence(
-    'delete', // clean any previous build
+    'delete',
     'copy',
     'copy:fonts',
     [
