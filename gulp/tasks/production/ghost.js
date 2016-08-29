@@ -19,7 +19,7 @@ gulp.task('ghost:production', ['dist'], function () {
     ghostServer.start().then(function () {
       runSequence(
         'symlink:production',
-        'browsersync'
+        'browsersync:production'
       );
     });
   });

@@ -7,7 +7,7 @@ gulp.task('ghost', function (callback) {
     'ghost:start', // sass (dependency of ghost:start) does not like it when symlink is run async
     function () {
       gulp.watch('app/**/*.hbs', ['browsersync:reload']);
-      gulp.watch('app/assets/scss/**/*.scss', ['sass', 'browsersync:reload']);
+      gulp.watch('app/assets/scss/**/*.scss', ['sass']);
 
       return callback;
     }
