@@ -1,0 +1,21 @@
+# Uses Named Volume's feature available since Docker 1.9.
+# This removes the need for the 'content' container and the corresponding docker/content/Dockerfile
+version: '2'
+
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "80:80"
+    links:
+      - ghost
+
+  ghost:
+    build: ghost
+    volumes:
+      - content:/usr/lib/ghost
+    environment:
+      - BLOG_URL=http://my-ghost-theme.switchbit.local.io
+
+volumes:
+  content:

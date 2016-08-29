@@ -1,0 +1,50 @@
+server {
+  listen              80;
+  server_name         localhost my-ghost-theme.switchbit.local.io;
+
+  location / {
+    proxy_set_header  Host                $host;
+    proxy_set_header  X-Forwarded-Proto   $scheme;
+    proxy_set_header  X-Real-IP           $remote_addr;
+    proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_http_version                    1.1;
+    proxy_connect_timeout                 90;
+    proxy_send_timeout                    90;
+    proxy_read_timeout                    90;
+    proxy_buffer_size                     4k;
+    proxy_buffers                         4 32k;
+    proxy_busy_buffers_size               64k;
+    proxy_temp_file_write_size            64k;
+
+    # From: https://ghost.org/forum/bugs-suggestions/469-blog-cover-won-t-upload/11/
+    client_max_body_size                  10m;
+    client_body_buffer_size               128k;
+
+    proxy_pass                            http://ghost:2368;
+  }
+
+  # revisioned/fingerprinted images can be cached forever
+  location ~ "/assets/images/(.*)-([a-z0-9]{10})\.(?:png|jpe?g|tiff)(.*)$" {
+    expires           max;
+    add_header        Cache-Control public;
+    add_header        Vary Accept;
+    proxy_pass        http://ghost:2368/$uri$webp_suffix;
+    access_log        off;
+  }
+
+  # revisioned/fingerprinted css and js can be cached forever
+  location ~* \.(?:css|js) {
+    expires           max;
+    add_header        Cache-Control public;
+    proxy_pass        http://ghost:2368/$uri;
+    access_log        off;
+  }
+
+  # non revisioned/fingerprinted images only cache for 1 week
+  location ~* \.(?:gif|png|jpe?g)$ {
+    expires           1w;
+    add_header        Cache-Control public;
+    proxy_pass        http://ghost:2368/$uri;
+    access_log        off;
+  }
+}

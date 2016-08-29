@@ -1,0 +1,15 @@
+ghost-content:
+  image: donovanmuller/my-ghost-theme-content:0.9
+  command: echo "Ghost content volume"
+  autoredeploy: false
+
+ghost:
+  image: donovanmuller/my-ghost-theme-ghost:0.9
+  volumes_from:
+    - ghost-content
+  environment:
+    - VIRTUAL_HOST=<e.g. my-ghost-theme.ghosty.io>
+    - LETSENCRYPT_HOST=<e.g. my-ghost-theme.ghosty.io>
+    - LETSENCRYPT_EMAIL=<add domain email>
+    - BLOG_URL=<e.g. http://my-ghost-theme.ghosty.io>
+  restart: always

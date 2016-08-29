@@ -3,6 +3,7 @@ var ghost = require('ghost');
 var path = require('path');
 var runSequence = require('run-sequence');
 var env = require('gulp-env');
+var shell = require('gulp-shell');
 
 var g;
 
@@ -23,4 +24,14 @@ gulp.task('ghost:production', ['dist'], function () {
       );
     });
   });
+});
+
+gulp.task('ghost:docker', ['dist:docker'], function () {
+  return gulp
+    .src('')
+    .pipe(shell([
+      'docker-compose -f docker-compose.yml -p my-ghost-theme up'
+    ], {
+      cwd: 'docker'
+    }));
 });

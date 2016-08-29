@@ -1,0 +1,17 @@
+nginx:
+  build: nginx
+  ports:
+    - "80:80"
+  links:
+    - ghost
+
+ghost:
+  build: ghost
+  volumes_from:
+    - content
+  environment:
+    - BLOG_URL=http://my-ghost-theme.switchbit.local.io
+
+content:
+  build: content
+  command: echo "Ghost content volume"
